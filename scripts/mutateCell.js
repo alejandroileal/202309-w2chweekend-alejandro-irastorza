@@ -15,14 +15,14 @@ const mutateCell = (arrayToIterate, cellPositionX, cellPositionY) => {
   for (let x = 0; x < arrayToIterate.length; x++) {
     for (let y = 0; y < arrayToIterate[x].length; y++) {
       const aliveParentsCounter =
-        arrayToIterat[cellPositionX - 1][cellPositionY - 1] +
-        arrayToIterat[cellPositionX - 1][cellPositionY] +
-        arrayToIterat[cellPositionX - 1][cellPositionY + 1] +
-        arrayToIterat[cellPositionX][cellPositionY - 1] +
-        arrayToIterat[cellPositionX][cellPositionY + 1] +
-        arrayToIterat[cellPositionX + 1][cellPositionY - 1] +
-        arrayToIterat[cellPositionX + 1][cellPositionY] +
-        arrayToIterat[cellPositionX + 1][cellPositionY + 1];
+        arrayToIterate[cellPositionX - 1][cellPositionY - 1] +
+        arrayToIterate[cellPositionX - 1][cellPositionY] +
+        arrayToIterate[cellPositionX - 1][cellPositionY + 1] +
+        arrayToIterate[cellPositionX][cellPositionY - 1] +
+        arrayToIterate[cellPositionX][cellPositionY + 1] +
+        arrayToIterate[cellPositionX + 1][cellPositionY - 1] +
+        arrayToIterate[cellPositionX + 1][cellPositionY] +
+        arrayToIterate[cellPositionX + 1][cellPositionY + 1];
     }
   }
 
@@ -32,3 +32,14 @@ const mutateCell = (arrayToIterate, cellPositionX, cellPositionY) => {
 
   return newCellStatus;
 };
+
+const testArray = [
+  [0, 0, 1, 1, 1, 0],
+  [0, 1, 1, 1, 0, 0],
+  [1, 1, 0, 1, 1, 0],
+  [0, 1, 1, 0, 1, 0],
+  [1, 0, 1, 0, 1, 1],
+  [1, 0, 1, 0, 0, 1],
+];
+
+console.log(mutateCell(testArray, 1, 2));
