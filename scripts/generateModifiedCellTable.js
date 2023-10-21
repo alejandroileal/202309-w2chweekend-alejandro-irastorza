@@ -6,7 +6,7 @@ export const generateModifiedCellTable = (tableToModify) => {
 
   for (let x = 0; x < tableToModify.length; x++) {
     for (let y = 0; y < tableToModify[x].length; y++) {
-      newTable[x][y] = mutateCell(tableToModify[x][y]);
+      newTable[x][y] = mutateCell(tableToModify, x, y);
     }
   }
 
