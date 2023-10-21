@@ -11,22 +11,27 @@
 
 const mutateCell = (arrayToIterate, cellPositionX, cellPositionY) => {
   let newCellStatus;
+  let aliveParentsCounter = 0;
 
-  for (let x = 0; x < arrayToIterate.length; x++) {
-    for (let y = 0; y < arrayToIterate[x].length; y++) {
-      const aliveParentsCounter =
-        arrayToIterate[cellPositionX - 1][cellPositionY - 1] +
-        arrayToIterate[cellPositionX - 1][cellPositionY] +
-        arrayToIterate[cellPositionX - 1][cellPositionY + 1] +
-        arrayToIterate[cellPositionX][cellPositionY - 1] +
-        arrayToIterate[cellPositionX][cellPositionY + 1] +
-        arrayToIterate[cellPositionX + 1][cellPositionY - 1] +
-        arrayToIterate[cellPositionX + 1][cellPositionY] +
-        arrayToIterate[cellPositionX + 1][cellPositionY + 1];
+  for (let x = -1; x <= 1; x++) {
+    for (let y = -1; y <= 1; y++) {
+      try {
+        if (arrayToIterate[cellPositionX + x][cellPositionY + y] > 0) {
+          aliveParentsCounter++;
+        }
+      } catch (error) {}
     }
   }
 
-  if (aliveParentsCounter < 2 || aliveParentsCounter > 3) {
+  if (arrayToIterate[cellPositionX][cellPositionY] > 0) {
+    aliveParentsCounter--;
+  }
+
+  console.log(aliveParentsCounter);
+
+  if (aliveParentsCounter === 2 || aliveParentsCounter === 3) {
+    newCellStatus = 1;
+  } else {
     newCellStatus = 0;
   }
 
@@ -42,4 +47,4 @@ const testArray = [
   [1, 0, 1, 0, 0, 1],
 ];
 
-console.log(mutateCell(testArray, 1, 2));
+console.log(mutateCell(testArray, 5, 5));
