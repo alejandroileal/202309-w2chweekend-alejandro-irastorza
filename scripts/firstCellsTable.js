@@ -10,4 +10,4 @@ export const newCellTable = (rows, colums) => {
   return cellArray;
 };
 
-console.log(newCellTable(3, 3));
+console.log(newCellTable(6, 6));
