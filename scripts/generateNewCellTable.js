@@ -1,4 +1,4 @@
-export const newCellTable = (rows, colums) => {
+export const generateNewCellTable = (rows, colums) => {
   const cellArray = [];
   for (let i = 0; i < colums; i++) {
     cellArray.push([]);
@@ -9,5 +9,3 @@ export const newCellTable = (rows, colums) => {
 
   return cellArray;
 };
-
-console.log(newCellTable(6, 6));
