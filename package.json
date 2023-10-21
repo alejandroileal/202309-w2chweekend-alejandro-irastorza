@@ -1,18 +1,18 @@
 {
   "name": "week2",
   "version": "1.0.0",
-  "description": "Week 1 del Bootcamp",
+  "description": "Week 2 Challenge Weekend",
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll",
-    "test:coverage": "jest --watchAll --coverage",
+    "test": "jest",
+    "test:coverage": "jest",
     "test:prod": "jest --watchAll --coverage --watchAll=false --passWithNoTests",
     "prepare": "husky install",
     "sass": "sass scss:css -w --no-source-map"
   },
   "keywords": [],
-  "author": "Alejandro Cerezo",
+  "author": "Alejandro Irastorza",
   "license": "ISC",
   "prettier": {
     "singleQuote": true
