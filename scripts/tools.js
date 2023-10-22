@@ -89,7 +89,6 @@ export const runLifeGame = () => {
   const newLifeGameTurn = () => {
     if (counter <= finalRoundTimer) {
       counter++;
-
       if (firstroundSwitch === true) {
         currentTable = generateNewCellTable(10, 10);
         printCellsTable(currentTable);
