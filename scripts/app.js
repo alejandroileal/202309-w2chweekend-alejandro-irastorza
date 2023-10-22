@@ -21,7 +21,7 @@ const runLifeGame = () => {
       counter++;
 
       if (firstroundSwitch === true) {
-        currentTable = generateNewCellTable(3, 3);
+        currentTable = generateNewCellTable(5, 5);
         printCellsTable(currentTable);
         firstroundSwitch = false;
         setTimeout(newLifeGameTurn, 2000);
