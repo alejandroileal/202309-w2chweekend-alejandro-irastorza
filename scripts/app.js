@@ -5,37 +5,13 @@
 // Imprimir el nuevo Array
 // Recorrer el primer elemento del segundo array / sumar sus parientes / cambiar el valor en esa posición y colorcarlo en un nuevo Array
 
-import { generateModifiedCellTable } from './generateModifiedCellTable.js';
-import { generateNewCellTable } from './generateNewCellTable.js';
-import { printCellsTable } from './printCellsTable.js';
-
-const runLifeGame = () => {
-  let firstroundSwitch = true;
-  const finalRoundTimer = 10;
-  let currentTable;
-  let counter;
-  counter = 0;
-
-  const newLifeGameTurn = () => {
-    if (counter <= finalRoundTimer) {
-      counter++;
-
-      if (firstroundSwitch === true) {
-        currentTable = generateNewCellTable(5, 5);
-        printCellsTable(currentTable);
-        firstroundSwitch = false;
-        setTimeout(newLifeGameTurn, 2000);
-      }
-
-      if (firstroundSwitch === false && counter > 1) {
-        currentTable = generateModifiedCellTable(currentTable);
-        printCellsTable(currentTable);
-        setTimeout(newLifeGameTurn, 2000);
-      }
-    }
-  };
-
-  newLifeGameTurn();
-};
+import {
+  generateNewCellTable,
+  printCellsTable,
+  aliveChecker,
+  mutateCell,
+  generateModifiedCellTable,
+  runLifeGame,
+} from './tools.js';
 
 runLifeGame();
