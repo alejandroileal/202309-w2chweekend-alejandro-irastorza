@@ -1,6 +1,8 @@
 // Declaramos un array clonado del original para después reemplazar los elementos con los nuevos
 // Recorremos el Array que pusimos de parámetro / por cada posición analizamos los vecinos y sumamos aquellos que estén en 1 dentro de un acumulador /
 
+import { mutateCell } from './mutateCell.js';
+
 export const generateModifiedCellTable = (tableToModify) => {
   const newTable = [...tableToModify];
 

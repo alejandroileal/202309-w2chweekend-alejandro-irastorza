@@ -9,7 +9,7 @@
 //   - Si tiene 2 o 3 células contiguas vivas, sobrevive.
 // - Una célula muerta sigue la siguiente regla: Permanece muerta hasta que tiene exactamente 3 células contiguas vivas, momento en el que "nace".
 
-const mutateCell = (arrayToIterate, cellPositionX, cellPositionY) => {
+export const mutateCell = (arrayToIterate, cellPositionX, cellPositionY) => {
   let newCellStatus;
   let aliveParentsCounter = 0;
 
@@ -27,8 +27,6 @@ const mutateCell = (arrayToIterate, cellPositionX, cellPositionY) => {
     aliveParentsCounter--;
   }
 
-  console.log(aliveParentsCounter);
-
   if (aliveParentsCounter === 2 || aliveParentsCounter === 3) {
     newCellStatus = 1;
   } else {
@@ -37,14 +35,3 @@ const mutateCell = (arrayToIterate, cellPositionX, cellPositionY) => {
 
   return newCellStatus;
 };
-
-const testArray = [
-  [0, 0, 1, 1, 1, 0],
-  [0, 1, 1, 1, 0, 0],
-  [1, 1, 0, 1, 1, 0],
-  [0, 1, 1, 0, 1, 0],
-  [1, 0, 1, 0, 1, 1],
-  [1, 0, 1, 0, 0, 1],
-];
-
-console.log(mutateCell(testArray, 5, 5));

@@ -5,11 +5,12 @@
 // Imprimir el nuevo Array
 // Recorrer el primer elemento del segundo array / sumar sus parientes / cambiar el valor en esa posición y colorcarlo en un nuevo Array
 
+import { generateModifiedCellTable } from './generateModifiedCellTable.js';
 import { generateNewCellTable } from './generateNewCellTable.js';
 import { printCellsTable } from './printCellsTable.js';
 
 let firstroundSwitch = true;
-const finalRoundTimer = 100;
+const finalRoundTimer = 30;
 let currentTable;
 
 if (firstroundSwitch === true) {
